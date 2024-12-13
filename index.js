@@ -5,11 +5,12 @@ const vendorRoutes =require('./routes/vendorRoutes');
 const bodyparser = require('body-parser');
 const firmRoutes =require('./routes/firmRoutes');
 const productRoutes =require('./routes/productsRoutes');
-// const cors = require('cors');
+ const cors = require('cors');
 const path =require('path');
 
 const app = express()
-const PORT = process.env.PORT || 4040;
+const PORT = process.env.PORT || 8014;
+app.use(cors());
 
 dotEnv.config();
 mongoose.set('debug', true);
@@ -27,6 +28,6 @@ app.listen(PORT, () => {
     console.log(`Server started and running on port ${PORT}`);
   });
 
-app.use('/home', (req ,res) =>{
+app.use('/', (req ,res) =>{
     res.send("<h1> Karthik");
 })
