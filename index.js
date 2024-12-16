@@ -9,7 +9,7 @@ const productRoutes =require('./routes/productsRoutes');
 const path =require('path');
 
 const app = express()
-const PORT = process.env.PORT || 8014;
+const PORT = process.env.PORT || 408;
 app.use(cors());
 
 dotEnv.config();
